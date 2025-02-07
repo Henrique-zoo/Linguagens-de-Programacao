@@ -3,13 +3,13 @@ QUESTÃO 9 VALOR: 1,0 ponto
     Defina a função "executaPlantao", cujo tipo é dado abaixo e que executa um plantão válido a partir de um estoque de medicamentos, resultando em novo estoque. A execução consiste em desempenhar, sequencialmente, todos os cuidados para cada horário do plantão. Caso o estoque acabe antes de terminar a execução do plantão, o resultado da função deve ser Nothing. Caso contrário, o resultado deve ser Just v, onde v é o valor final do estoque de medicamentos
 -}
 
-module Questao9.ExecutaPlantao where
+module Questao_9.ExecutaPlantao where
 
 import TiposDoProjeto ( Cuidado(..), EstoqueMedicamentos, Plantao )
 import Testes
     ( estoque1, estoque2, med4, med6, med7, plantao1, plantao2 )
-import Questao1.ComprarMedicamento ( comprarMedicamento )
-import Questao2.TomarMedicamento ( tomarMedicamento )
+import Questao_1.ComprarMedicamento ( comprarMedicamento )
+import Questao_2.TomarMedicamento ( tomarMedicamento )
 
 executaPlantao :: Plantao -> EstoqueMedicamentos -> Maybe EstoqueMedicamentos
 executaPlantao [] estoque = Just estoque

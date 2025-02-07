@@ -2,6 +2,12 @@ module Testes where
 
 import Data.Maybe (isNothing)
 import TiposDoProjeto
+    ( Cuidado(Medicar, Comprar),
+      EstoqueMedicamentos,
+      Medicamento,
+      PlanoMedicamento,
+      Plantao,
+      Receituario )
 
 --------------------- DECLARAÇÕES ---------------------
 med1 :: Medicamento

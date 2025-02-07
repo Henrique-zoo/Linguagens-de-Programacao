@@ -5,7 +5,7 @@ QUESTÃO 10 VALOR: 1,0 ponto
     Dica: fazer correspondencia entre os remédios previstos no plano e os ministrados pela execução do plantão. Note que alguns cuidados podem ser comprar medicamento e que eles podem ocorrer sozinhos em certo horário ou juntamente com ministrar medicamento.
 -}
 
-module Questao10.Satisfaz where
+module Questao_10.Satisfaz where
 
 import TiposDoProjeto
     ( Cuidado(Medicar),
@@ -13,7 +13,7 @@ import TiposDoProjeto
       PlanoMedicamento,
       Plantao )
 import Testes ( estoque1, estoque2, plano1, plantao1, plantao2 )
-import Questao9.ExecutaPlantao ( executaPlantao )
+import Questao_9.ExecutaPlantao ( executaPlantao )
 
 satisfaz :: Plantao -> PlanoMedicamento -> EstoqueMedicamentos -> Bool
 satisfaz plantao planoMedicamento estoque = executa && corresponde plantao planoMedicamento

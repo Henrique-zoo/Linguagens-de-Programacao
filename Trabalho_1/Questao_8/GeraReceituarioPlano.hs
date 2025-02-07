@@ -5,13 +5,13 @@ QUESTÃO 8  VALOR: 1,0 ponto
     Dica: Existe alguma relação de simetria entre o receituário e o plano de medicamentos? Caso exista, essa simetria permite compararmos a função geraReceituarioPlano com a função geraPlanoReceituario ? Em outras palavras, podemos definir geraReceituarioPlano com base em geraPlanoReceituario ?
 -}
 
-module Questao8.GeraReceituarioPlano where
+module Questao_8.GeraReceituarioPlano where
 
 import TiposDoProjeto
     ( Horario, Medicamento, PlanoMedicamento, Receituario )
 import Testes
     ( med4, med6, med7, med8, receituario1, receituario2 )
-import Questao7.GeraPlanoReceituario ( geraPlanoReceituario )
+import Questao_7.GeraPlanoReceituario ( geraPlanoReceituario )
 
 geraReceituarioPlano :: PlanoMedicamento -> Receituario
 geraReceituarioPlano planoMedicamento = ordenarReceituario (agruparHorarios expandePlano)

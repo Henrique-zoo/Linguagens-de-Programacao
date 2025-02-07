@@ -5,7 +5,7 @@ QUESTÃO 11 VALOR: 1,0 ponto
     Dica: a execução do plantão deve atender ao plano de medicamentos e ao estoque.
 -}
 
-module Questao11.PlantaoCorreto where
+module Questao_11.PlantaoCorreto where
 
 import TiposDoProjeto
     ( Cuidado(..),
@@ -14,9 +14,9 @@ import TiposDoProjeto
       PlanoMedicamento,
       Plantao )
 import Testes ( estoque1, estoque2, plano1, plano2 )
-import Questao3.ConsultarMedicamento ( consultarMedicamento )
-import Questao1.ComprarMedicamento ( comprarMedicamento )
-import Questao10.Satisfaz ( satisfaz )
+import Questao_3.ConsultarMedicamento ( consultarMedicamento )
+import Questao_1.ComprarMedicamento ( comprarMedicamento )
+import Questao_10.Satisfaz ( satisfaz )
 
 plantaoCorreto :: PlanoMedicamento -> EstoqueMedicamentos -> Plantao
 plantaoCorreto [] _ = []

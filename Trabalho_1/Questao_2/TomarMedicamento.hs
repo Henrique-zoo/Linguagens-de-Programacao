@@ -2,7 +2,7 @@
 QUESTÃO 2, VALOR: 1,0 ponto
    Defina a função "tomarMedicamento", cujo tipo é dado abaixo e que, a partir de um medicamento e de um estoque de medicamentos, retorna um novo estoque de medicamentos, resultante de 1 comprimido do medicamento ser ministrado ao paciente. Se o medicamento não existir no estoque, Nothing deve ser retornado. Caso contrário, deve se retornar Just v, onde v é o novo estoque.
 -}
-module Questao2.TomarMedicamento where
+module Questao_2.TomarMedicamento where
 
 import TiposDoProjeto ( EstoqueMedicamentos, Medicamento )
 import Testes ( med4, med6, med7, med8, estoque1 )

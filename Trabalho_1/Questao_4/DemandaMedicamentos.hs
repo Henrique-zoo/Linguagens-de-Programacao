@@ -5,7 +5,7 @@ QUESTÃO 4  VALOR: 1,0 ponto
     Dica: Observe que o receituario lista cada remédio e os horários em que ele deve ser tomado no dia. Assim, a demanda de cada remédio já está latente no receituario, bastando contar a quantidade de vezes que cada remédio é tomado.
 -}
 
-module Questao4.DemandaMedicamentos where
+module Questao_4.DemandaMedicamentos where
 
 import TiposDoProjeto (
     Medicamento,

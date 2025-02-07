@@ -5,7 +5,7 @@ QUESTÃO 7  VALOR: 1,0 ponto
     Dica: enquanto o receituário lista os horários que cada remédio deve ser tomado, o plano de medicamentos  é uma disposição ordenada por horário de todos os remédios que devem ser tomados pelo paciente em um certo horário.
 -}
 
-module Questao7.GeraPlanoReceituario where
+module Questao_7.GeraPlanoReceituario where
 
 import TiposDoProjeto
     ( PlanoMedicamento, Receituario, Horario, Medicamento )

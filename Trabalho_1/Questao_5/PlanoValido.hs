@@ -3,7 +3,7 @@ QUESTÃO 5  VALOR: 1,0 ponto, sendo 0,5 para cada função.
     b) Inversamente, um plano de medicamentos é válido se, e somente se, todos seus horários também estão ordenados e são distintos, e para cada horário, os medicamentos são distintos e são ordenados lexicograficamente. Defina a função "planoValido".
 -}
 
-module Questao5.PlanoValido where
+module Questao_5.PlanoValido where
 
 import TiposDoProjeto ( PlanoMedicamento, Medicamento )
 import Testes

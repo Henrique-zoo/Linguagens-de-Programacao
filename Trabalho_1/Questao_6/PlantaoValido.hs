@@ -9,7 +9,7 @@ QUESTÃO 6  VALOR: 1,0 ponto,
     Defina a função "plantaoValido" que verifica as propriedades acima e cujo tipo é dado abaixo:
 -}
 
-module Questao6.PlantaoValido where
+module Questao_6.PlantaoValido where
 
 import TiposDoProjeto ( Cuidado(..), Plantao, Medicamento )
 import Testes
