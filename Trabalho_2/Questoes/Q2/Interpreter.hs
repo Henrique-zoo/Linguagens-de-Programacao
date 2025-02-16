@@ -1,7 +1,6 @@
 module Questoes.Q2.Interpreter where
 
-import Questoes.Q2.AbsLI
-    ( Exp(..), Stm(..), Program(..), Ident(..) )
+import Questoes.Q2.AbsLI (Exp(..), Stm(..), Program(..), Ident(..))
 import Prelude hiding (lookup)
 
 type RContext = [(String, Valor)]
@@ -11,21 +10,14 @@ data Valor
     | ValorInt Integer
     | ValorBool Bool
 
-s :: Valor -> String
-s (ValorStr str) = str
-
-i :: Valor -> Integer
-i (ValorInt vint) = vint
-
-b :: Valor -> Bool
-b (ValorBool vbool) = vbool
-
 instance Show Valor where
+    show :: Valor -> String
     show (ValorInt vint) = show vint
     show (ValorStr vstr) = vstr
     show (ValorBool vb) = show vb
 
 instance Eq Valor where
+    (==) :: Valor -> Valor -> Bool
     (ValorInt i1) == (ValorInt i2) = i1 == i2
     (ValorStr s1) == (ValorStr s2) = s1 == s2
     (ValorBool b1) == (ValorBool b2) = b1 == b2
@@ -39,8 +31,7 @@ execute context x = case x of
     SBlock [] -> context
     SBlock (s : stms) -> execute (execute context s) (SBlock stms)
     SWhile exp stm ->
-        if i (eval context exp) /= 0
-        then execute (execute context stm) (SWhile exp stm)
+        if i (eval context exp) /= 0 then execute (execute context stm) (SWhile exp stm)
         else context
 
 eval :: RContext -> Exp -> Valor
@@ -58,6 +49,15 @@ eval context x = case x of
     ENot exp -> ValorBool (not (b (eval context exp)))
     ETrue -> ValorBool True
     EFalse -> ValorBool False
+
+s :: Valor -> String
+s (ValorStr str) = str
+
+i :: Valor -> Integer
+i (ValorInt vint) = vint
+
+b :: Valor -> Bool
+b (ValorBool vbool) = vbool
 
 getStr :: Ident -> String
 getStr (Ident s) = s

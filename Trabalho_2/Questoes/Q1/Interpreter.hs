@@ -1,7 +1,6 @@
 module Questoes.Q1.Interpreter where
 
-import Questoes.Q1.AbsLI
-    ( Exp(..), Stm(..), Program(..), Ident(..) )
+import Questoes.Q1.AbsLI (Exp(..), Stm(..), Program(..), Ident(..))
 import Prelude hiding (lookup)
 
 type RContext = [(String, Integer)]
@@ -15,8 +14,7 @@ execute context x = case x of
     SBlock [] -> context
     SBlock (s : stms) -> execute (execute context s) (SBlock stms)
     SWhile exp stm ->
-        if eval context exp /= 0
-        then execute (execute context stm) (SWhile exp stm)
+        if eval context exp /= 0 then execute (execute context stm) (SWhile exp stm)
         else context
     SdoWhile stm exp -> execute (execute context stm) (SWhile exp stm)
 
