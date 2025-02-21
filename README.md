@@ -52,14 +52,15 @@ Tipos algébricos são uma construção fundamental em linguagens de programaç�
 
 A álgebra de tipos é um sistema que trata tipos de dados como entidades matemáticas, permitindo a combinação de tipos por meio de operações. Essas operações são análogas às operações da **teoria dos conjuntos**, o que permite uma abordagem formal e matemática para o estudo de tipos. Definimos, portanto, **tipos como o conjunto de seus possíveis valores**.
 
-Para os exemplos, consideramos 
-```
-A = {1, 2} (cardinalidade |A| = 2)
-```
+Para os exemplos, consideramos
+    <div align='center'>
+        A = \{1, 2\} (cardinalidade |A| = 2)
+    </div>
+
 e 
-```
-B = {'a', 'b', 'c'} (cardinalidade |B| = 3)
-```
+    <div align='center'>
+        B = \{‘a', ‘b', ‘c'\} (cardinalidade |B| = 3)
+    </div>
 
 #### **Soma ⇋ União Disjunta $( A \sqcup B )$**
 Representa uma escolha entre tipos. A soma de dos tipos $A$ e $B$ na álgebra de tipos corresponde à união disjunta desses conjuntos na teoria de conjuntos.
@@ -67,60 +68,85 @@ Representa uma escolha entre tipos. A soma de dos tipos $A$ e $B$ na álgebra de
 - Utiliza-se união disjunta e não união simples, pois a união disjunta de dois conjuntos $A$ e $B$, denotada por $A ⊔ B$, é uma operação que preserva a "origem" dos elementos, mesmo que eles sejam iguais. Em outras palavras, os elementos da união disjunta são "marcados" para indicar de qual conjunto original eles vieram, dessa forma, evitando confusão entre dois valores iguais de tipos diferentes.
 
 - Definição Formal: Sejam $A$ e $B$ tipos quaisquer e $C = A ⊔ B$, temos
-    ```
-    C = {(a,0) | a ∈ A} ∪ {(b,1) | b ∈ B}
-    ```
+      <div align='center'>
+          $C = \{(a,0) | a ∈ A\} ∪ \{(b,1) | b ∈ B\}$
+      </div>
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
-    ```
-    A ⊔ B = {(1,0), (2,0), ('a',1), ('b',1), ('c',1)}
-    (cardinalidade |A ⊔ B| = |A| + |B| = 5)
-    ```
+    
+    <div align='center'>
+        $A ⊔ B = \{(1,0), (2,0), (‘a´,1), (‘b´,1), (‘c´,1)\}$
+    </div>
+    <div align='center'>
+        $(cardinalidade |A ⊔ B| = |A| + |B| = 5)$
+    </div>
 
 #### **Produto ⇋ Produto Cartesiano ($A \times B$)**
 Representa uma combinação de tipos. O produto de dois tipos na álgebra de tipos corresponde ao produto cartesiano entre seus conjuntos.
 
 - Definição Formal: Sejam $A$ e $B$ tipos quaisquer e $C = A × B$, temos
-    ```
-    C = {(a,b) | a ∈ A, b ∈ B}
-    ```
+    <div align='center'>
+        $C = \{(a,b) | a ∈ A, b ∈ B\}$
+    </div>
+    
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
-    ```
-    A × B = {(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')}
-    (cardinalidade |A × B| = |A| × |B| = 6)
-    ```
+    <div align='center'>
+        A × B = {(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c')}
+    </div>
+    <div align='center'>
+        (cardinalidade |A × B| = |A| × |B| = 6)
+    </div>
 
 #### **Exponenciação ⇋ Conjunto de funções ($B^A$)**
 Representa todas as funções possíveis de $A$ para $B$. A exponeciação dos tipos $A$ e $B$ corresponde ao conjunto de funções do conjunto $A$ para o conjunto $B$, isto é, é conjunto de todas as funções possíveis que mapeiam elementos de $A$ para elementos de $B$.
 
 - Definição Formal: Sejam $A$ e $B$ tipos quaisquer e $C = A ^ B$, temos
-    ```
-    C = {f | f : A → B}
-    ```
+    <div align='center'>
+        C = {f | f : A → B}
+    </div>
 
     em que cada $f$ pode ser visto como um conjunto de pares ordenados
 
-    ```
-    f = {(a, b) | ∀ a ∈ A, ∃! b ∈ B}
-    ```
+    <div align='center'>
+        f = {(a, b) | ∀ a ∈ A, ∃! b ∈ B}
+    </div>
     - Note que $f_i ⊆ A × B ∀ i$.
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
-    ```
-    f_2: f_2(1) = 'a', f_2(2) = 'b' ⇒ f_2={(1, 'a'), (2,'b')}
-    f_1: f_1(1) = 'a', f_1(2) = 'a' ⇒ f_1={(1, 'a'), (2,'a')}
-    f_3: f_3(1) = 'a', f_3(2) = 'c' ⇒ f_3={(1, 'a'), (2,'c')}
-    f_4: f_4(1) = 'b', f_4(2) = 'a' ⇒ f_4={(1, 'b'), (2,'a')}
-    f_5: f_5(1) = 'b', f_5(2) = 'b' ⇒ f_5={(1, 'b'), (2,'b')}
-    f_6: f_6(1) = 'b', f_6(2) = 'c' ⇒ f_6={(1, 'b'), (2,'c')}
-    f_7: f_7(1) = 'c', f_7(2) = 'a' ⇒ f_7={(1, 'c'), (2,'a')}
-    f_8: f_8(1) = 'c', f_8(2) = 'b' ⇒ f_8={(1, 'c'), (2,'b')}
-    f_9: f_9(1) = 'c', f_9(2) = 'c' ⇒ f_9={(1, 'c'), (2,'c')}
-    B^A = {f_1, f_2, f_3, f_4, f_5, f_6, f_7, f_8, f_9}
-    (cardinalidade |B^A| = |B| ^ |A| = 9)
-    ```
-
+    <div align='center'>
+        $f_1: \ f_1(1) = ´a´, \ f_1(2) = ´a´ \Rightarrow f_1 = \{(1, ´a´), (2,´a´)\}$
+    </div>
+    <div align='center'>
+        $f_2: \ f_2(1) = ´a´, \ f_2(2) = ´b´ \Rightarrow f_2 = \{(1, ´a´), (2,´b´)\}$
+    </div>
+    <div align='center'>    
+        $f_3: \ f_3(1) = ´a´, \ f_3(2) = ´c´ \Rightarrow f_3 = \{(1, ´a´), (2,´c´)\}$
+    </div>
+    <div align='center'> 
+        $f_4: \ f_4(1) = ´b´, \ f_4(2) = ´a´ \Rightarrow f_4 = \{(1, ´b´), (2,´a´)\}$
+    </div>
+    <div align='center'> 
+        $f_5: \ f_5(1) = ´b´, \ f_5(2) = ´b´ \Rightarrow f_5 = \{(1, ´b´), (2,´b´)\}$
+    </div>
+    <div align='center'> 
+        $f_6: \ f_6(1) = ´b´, \ f_6(2) = ´c´ \Rightarrow f_6 = \{(1, ´b´), (2,´c´)\}$
+    </div>
+    <div align='center'> 
+        $f_7: \ f_7(1) = ´c´, \ f_7(2) = ´a´ \Rightarrow f_7 = \{(1, ´c´), (2,´a´)\}$
+    </div>
+    <div align='center'> 
+        $f_8: \ f_8(1) = ´c´, \ f_8(2) = ´b´ \Rightarrow f_8 = \{(1, ´c´), (2,´b´)\}$
+    </div>
+    <div align='center'> 
+        $f_9: \ f_9(1) = ´c´, \ f_9(2) = ´c´ \Rightarrow f_9 = \{(1, ´c´), (2,´c´)\}$
+    </div>
+    <div align='center'> 
+        $B^A = \{f_1, \ f_2, \ f_3, \ f_4, \ f_5, \ f_6, \ f_7, \ f_8, \ f_9\}$
+    </div>
+    <div align='center'> 
+        $(cardinalidade |B^A| = |B| ^{|A|} = 9)$
+    </div>
 ### **Aplicação no Haskell**
 Com o arcabouço teórico apresentado, podemos, finalmente entender os tipos algébricos no Haskell. Um tipo algébrico é um tipo de dados composto que pode ser definido como:
 
@@ -153,10 +179,10 @@ struct Retangulo {
 }
 ```
 
-A cardinalidade do tipo `Retangulo` é dada pela multiplicação da cardinalidade dos tipos `Base` e `Altura` (que são sinônimos de Double), desconsiderando o fato de que estamos lidando com sistemas digitais, consideramos $Double := \mathbb{R}$ , fazemos
-```
-|Retangulo| = |Base| × |Altura| = ℵ₁ × ℵ₁ = ℵ₁² = ℵ₁
-```
+A cardinalidade do tipo `Retangulo` é dada pela multiplicação da cardinalidade dos tipos `Base` e `Altura` (que são sinônimos de Double), desconsiderando o fato de que estamos lidando com sistemas digitais, consideramos $Double := {\displaystyle \mathbb {R} }$, fazemos
+    <div align='center'> 
+        |*Retangulo*| = |*Base*| × |*Altura*| = ℵ₁ × ℵ₁ = ℵ₁² = ℵ₁
+    </div>
 
 em que ℵ₁ é a cardinalidade dos reais.
 
@@ -184,9 +210,9 @@ enum Forma {
 ```
 
 A cardinalidade do tipo `Forma` é dada pela soma da cardinalidade dos tipos `Circulo` e `Retangulo`
-```
-|Forma| = |Circulo| + |Retangulo| = |Raio| + |Base| × |Altura| = ℵ₁ + ℵ₁ × ℵ₁ = ℵ₁
-```
+    <div align="center">
+        |*Forma*| = |*Circulo*| + |*Retangulo*| = |*Raio*| + |*Base*| × |*Altura*| = ℵ₁ + ℵ₁ × ℵ₁ = ℵ₁
+    </div>
 
 em que ℵ₁ é a cardinalidade dos reais.
 
