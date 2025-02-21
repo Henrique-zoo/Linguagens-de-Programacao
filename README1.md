@@ -110,8 +110,8 @@ Representa todas as funções possíveis de $A$ para $B$. A exponeciação dos t
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
 $$
-f_2: f_2(1) = \text{`a'}, \ f_2(2) = \text{`b'} \Rightarrow f_2=\{(1, \text{`a'}), \ (2,\text{`b'})\} \\
 f_1: f_1(1) = \text{`a'}, \ f_1(2) = \text{`a'} \Rightarrow f_1=\{(1, \text{`a'}), \ (2,\text{`a'})\} \\
+f_2: f_2(1) = \text{`a'}, \ f_2(2) = \text{`b'} \Rightarrow f_2=\{(1, \text{`a'}), \ (2,\text{`b'})\} \\
 f_3: f_3(1) = \text{`a'}, \ f_3(2) = \text{`c'} \Rightarrow f_3=\{(1, \text{`a'}), \ (2,\text{`c'})\} \\
 f_4: f_4(1) = \text{`b'}, \ f_4(2) = \text{`a'} \Rightarrow f_4=\{(1, \text{`b'}), \ (2,\text{`a'})\} \\
 f_5: f_5(1) = \text{`b'}, \ f_5(2) = \text{`b'} \Rightarrow f_5=\{(1, \text{`b'}), \ (2,\text{`b'})\} \\
