@@ -53,62 +53,63 @@ Tipos algébricos são uma construção fundamental em linguagens de programaç�
 A álgebra de tipos é um sistema que trata tipos de dados como entidades matemáticas, permitindo a combinação de tipos por meio de operações. Essas operações são análogas às operações da **teoria dos conjuntos**, o que permite uma abordagem formal e matemática para o estudo de tipos. Definimos, portanto, **tipos como o conjunto de seus possíveis valores**.
 
 Para os exemplos, consideramos 
-\[
+$$
 A = \{1, 2\} \quad (\text{cardinalidade } |A| = 2)
 \\
 e 
 \\
 B = \{\text{`a'}, \text{`b'}, \text{`c'}\} \quad (\text{cardinalidade } |B| = 3)
-\]
+
+$$
 
 
-#### **Soma ⇋ União Disjunta (\( A \sqcup B \))**
+#### **Soma ⇋ União Disjunta $( A \sqcup B )$**
 Representa uma escolha entre tipos. A soma de dos tipos $A$ e $B$ na álgebra de tipos corresponde à união disjunta desses conjuntos na teoria de conjuntos.
 
 - Utiliza-se união disjunta e não união simples, pois a união disjunta de dois conjuntos $A$ e $B$, denotada por $A ⊔ B$, é uma operação que preserva a "origem" dos elementos, mesmo que eles sejam iguais. Em outras palavras, os elementos da união disjunta são "marcados" para indicar de qual conjunto original eles vieram, dessa forma, evitando confusão entre dois valores iguais de tipos diferentes.
 
 - Definição Formal: Sejam $A$ e $B$ tipos quaisquer e $C = A ⊔ B$, temos
-    \[
+    $$
     C = \{(a,0) \mid a \in A\} \cup \{(b,1) \mid b \in B\}
-    \]
+    $$
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
-    \[
+    $$
     A ⊔ B = \{(1,0), (2,0), (\text{`a'},1), (\text{`b'},1), (\text{`c'},1)\} \\[5pt]
     (\text{cardinalidade } |A ⊔ B| = |A| + |B| = 5)
-    \]
+    $$
 
-#### **Produto ⇋ Produto Cartesiano (\( A \times B \))**
+#### **Produto ⇋ Produto Cartesiano ($A \times B$)**
 Representa uma combinação de tipos. O produto de dois tipos na álgebra de tipos corresponde ao produto cartesiano entre seus conjuntos.
 
 - Definição Formal: Sejam $A$ e $B$ tipos quaisquer e $C = A × B$, temos
-    \[
+    $$
     C = \{(a,b) \mid a \in A, \ b \in B\}
-    \]
+    $$
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
-\[
+$$
 A × B = \{(1, \text{`a'}), (1, \text{`b'}), (1, \text{`c'}), (2, \text{`a'}), (2, \text{`b'}), (2, \text{`c'})\} \\[5pt]
 (\text{cardinalidade } |A × B| = |A| × |B| = 6)
-\]
+$$
 
-#### **Exponenciação ⇋ Conjunto de funções (\( B^A \))**
+#### **Exponenciação ⇋ Conjunto de funções ($B^A$)**
 Representa todas as funções possíveis de $A$ para $B$. A exponeciação dos tipos $A$ e $B$ corresponde ao conjunto de funções do conjunto $A$ para o conjunto $B$, isto é, é conjunto de todas as funções possíveis que mapeiam elementos de $A$ para elementos de $B$.
 
 - Definição Formal: Sejam $A$ e $B$ tipos quaisquer e $C = A ^ B$, temos
-    \[
+    $$
     C = \{f \mid f : A → B\}
-    \]
+    $$
 
     em que cada $f$ pode ser visto como um conjunto de pares ordenados
 
-    \[
+    $$
     f = \{(a, b) \mid \forall a \in A, \exists! b \in B\}
-    \]
+    $$
     - Note que $f_i \subseteq A × B \ \forall i$.
 
 - Exemplo: Para os conjuntos $A$ e $B$ definidos na introdução, temos:
-\[
+$$
 f_2: f_2(1) = \text{`a'}, \ f_2(2) = \text{`b'} \Rightarrow f_2=\{(1, \text{`a'}), \ (2,\text{`b'})\} \\
 f_1: f_1(1) = \text{`a'}, \ f_1(2) = \text{`a'} \Rightarrow f_1=\{(1, \text{`a'}), \ (2,\text{`a'})\} \\
 f_3: f_3(1) = \text{`a'}, \ f_3(2) = \text{`c'} \Rightarrow f_3=\{(1, \text{`a'}), \ (2,\text{`c'})\} \\
@@ -120,7 +121,7 @@ f_8: f_8(1) = \text{`c'}, \ f_8(2) = \text{`b'} \Rightarrow f_8=\{(1, \text{`c'}
 f_9: f_9(1) = \text{`c'}, \ f_9(2) = \text{`c'} \Rightarrow f_9=\{(1, \text{`c'}), \ (2,\text{`c'})\} \\[5pt]
 B^A = \{f_1,\ f_2,\ f_3,\ f_4,\ f_5,\ f_6,\ f_7,\ f_8,\ f_9\} \\[5pt]
 (\text{cardinalidade } |B^A| = |B| ^ {|A|} = 9)
-\]
+$$
 
 ### **Aplicação no Haskell**
 Com o arcabouço teórico apresentado, podemos, finalmente entender os tipos algébricos no Haskell. Um tipo algébrico é um tipo de dados composto que pode ser definido como:
