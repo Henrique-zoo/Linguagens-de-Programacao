@@ -23,10 +23,9 @@ Para gerar os arquivos fonte do lexer, do parser, o makefile e compilar esses ar
     bnfc -d -m <nome>.cf && make
 ```
 
-em que \<nome>.cf é onde está definida a linguagem abstrata, e, em seguida, execute o comando
+em que \<nome>.cf é onde está definida a linguagem abstrata.
 
-
-para compilar os geradores do lexer e do parser. Depois disso, é necessário definir o driver do interpretador no arquivo `Interpret.hs` e implementar a lógica da interpretação da linguagem objeto no arquivo `Interpreter.hs`. Finalmente, geramos o executável pelo comando a seguir
+Depois disso, é necessário definir o driver do interpretador no arquivo `Interpret.hs` e implementar a lógica da interpretação da linguagem objeto no arquivo `Interpreter.hs`. Finalmente, geramos o executável pelo comando a seguir
 
 ```
     ghc --make Interpret.hs
